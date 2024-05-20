@@ -1,0 +1,81 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: 'Arial', sans-serif;
+    background: #f0f0f0;
+    color: #333;
+}
+.section {
+    padding: 60px 30px;
+    transition: all 0.5s ease-in-out;
+    background: white;
+    border-bottom: 1px solid #e0e0e0;
+}
+.navbar {
+    background-color: #fff;
+    border-bottom: 2px solid #cccccc;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+.navbar a {
+    float: left;
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.navbar a:hover, .navbar a:focus {
+    background-color: #f0f0f0;
+    color: #000;
+}
+#about, #experience, #projects, #contact, #education {
+    color: #333;
+    background: linear-gradient(to right, #ffffff 0%, #f7f7f7 100%);
+}
+.project, .job {
+    margin: 20px;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+.project:hover, .job:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+.highlight {
+    color: #0056b3; /* NASA-inspired blue */
+    font-weight: bold;
+}
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.slide {
+    min-width: 100%;
+    transition: all 0.5s ease;
+    float: left;
+}
+.controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.control-btn {
+    cursor: pointer;
+    padding: 10px;
+    margin: 0 10px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
