@@ -1,26 +1,39 @@
 body, html {
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
-    font-family: 'Arial', sans-serif;
-    background: #f0f0f0;
-    color: #333;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/background.webp');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff; /* Change text color to white for better readability */
+    padding-top: 70px;
 }
+
 .section {
-    padding: 60px 30px;
-    transition: all 0.5s ease-in-out;
-    background: white;
-    border-bottom: 1px solid #e0e0e0;
+    padding: 80px 50px;
+    background: rgba(255, 255, 255, 0.9); /* Slightly less opaque for subtle background visibility */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* More pronounced shadow for depth */
+    margin: 30px auto; /* Increased margin for better separation of sections */
+    border-radius: 10px; /* Slightly larger radius for smoother corners */
+    max-width: 1000px; /* Adjusted for optimal line length in text */
+    border: 1px solid rgba(0, 0, 0, 0.05); /* Subtle border for defined edges */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for interactive elements */
 }
+
+.section:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Increased shadow on hover for 3D effect */
+}
+
 .navbar {
     background-color: #fff;
-    border-bottom: 2px solid #cccccc;
-    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    height: 60px; /* Set a fixed height for the navbar */
 }
+
 .navbar a {
     float: left;
     display: block;
@@ -29,53 +42,256 @@ body, html {
     padding: 14px 16px;
     text-decoration: none;
     font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
 }
+
 .navbar a:hover, .navbar a:focus {
-    background-color: #f0f0f0;
-    color: #000;
+    background-color: #0056b3;
+    color: #fff;
 }
+
 #about, #experience, #projects, #contact, #education {
     color: #333;
     background: linear-gradient(to right, #ffffff 0%, #f7f7f7 100%);
 }
+
 .project, .job {
     margin: 20px;
     padding: 20px;
     background: #ffffff;
-    border: 1px solid #dddddd;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .project:hover, .job:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
 }
+
 .highlight {
-    color: #0056b3; /* NASA-inspired blue */
+    color: #007BFF;
     font-weight: bold;
 }
+
 .slider {
     position: relative;
     width: 100%;
     overflow: hidden;
 }
+
 .slide {
     min-width: 100%;
     transition: all 0.5s ease;
     float: left;
 }
+
 .controls {
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
+
 .control-btn {
     cursor: pointer;
     padding: 10px;
     margin: 0 10px;
-    background-color: #0056b3;
+    background-color: #007BFF;
     color: white;
     border: none;
     border-radius: 5px;
+}
+
+.control-btn:hover {
+    background-color: #0056b3;
+}
+
+.details {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #f8f8f8;
+    border-left: 5px solid #0056b3;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.details ul {
+    padding-left: 20px;
+    list-style-type: none;
+}
+
+.details li {
+    margin-bottom: 5px;
+    padding-left: 20px;
+}
+
+.toggle-skills {
+    cursor: pointer;
+    color: #0056b3;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    transition: all 0.3s;
+}
+
+.button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 5px;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#dynamic-text {
+    color: #007BFF; /* Bright blue to highlight dynamic text */
+    font-weight: bold;
+}
+
+.section h1 {
+    color: #333; /* Neutral dark color */
+    margin-bottom: 20px; /* Space between the title and text */
+}
+
+.section:hover h1 {
+    color: #0056b3; /* Darker blue when hovering over the section */
+}
+
+.section p {
+    font-size: 18px; /* Slightly larger font for readability */
+    margin-bottom: 16px; /* Consistent spacing between paragraphs */
+}
+
+.section, .project, .job {
+    padding: 30px;
+    margin: 40px auto;
+    width: calc(100% - 80px); /* Slightly larger width */
+    max-width: 1200px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section h1, .project h1, .job h1 {
+    color: #0056b3; /* A theme color */
+    margin-bottom: 10px;
+}
+
+.section p, .project p, .job p {
+    font-size: 16px; /* Suitable font size */
+    color: #333; /* Dark gray for readability */
+    line-height: 1.6;
+}
+
+.section:hover, .project:hover, .job:hover {
+    transform: scale(1.02); /* Slight increase in size */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow for lifted effect */
+}
+
+#contact {
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 40px auto;
+    width: calc(100% - 80px);
+    max-width: 1200px;
+    text-align: center;
+}
+
+#contact .contact-info p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+#contact .contact-info a {
+    color: #333;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#contact .contact-info a:hover {
+    color: #0056b3;
+}
+
+.accordion h3 {
+    cursor: pointer;
+    padding: 15px;
+    margin-top: 10px;
+    background-color: #eee;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+.accordion h3:hover, .accordion h3:focus {
+    background-color: #ccc;
+}
+
+.details {
+    padding: 0 18px;
+    background-color: white;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .section {
+        padding: 60px 30px; /* Reduced padding on smaller screens */
+        margin: 20px auto; /* Smaller margin to utilize space efficiently */
+        max-width: 90%; /* Full use of screen width in small devices */
+    }
+
+    body, html {
+        padding-top: 60px; /* Smaller top padding for smaller navbar */
+    }
 }

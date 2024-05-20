@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Personal Portfolio</title>
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
 <body>
 
@@ -17,54 +18,142 @@
 </div>
 
 <div id="about" class="section">
-    <h1>About Me</h1>
-    <p>Introduce yourself here. Include your key skills and any important information about your professional background and personal interests.</p>
+    <h1>About Alex</h1>
+    <p>Hi, I'm Alexander Beaumier! I am a <span id="dynamic-text"></span> based in Phoenix, Arizona.<br>
+    I am a Cloud Engineering Professional not afraid to learn. From building full-stack applications to deploying websites and apps with AWS, I pride myself on resourcefulness. In my free time, I am either coding or traveling the world with my lovely wife!</p>
 </div>
 
 <div id="experience" class="section">
     <h1>Experience</h1>
-    <!-- Experience entries -->
+    <div class="job">
+        <a href="https://www.deloitte.com" target="_blank"><img src="images/Deloitte.png" alt="Deloitte Logo" class="logo"></a>
+        <h3>Cloud Engineer - Deloitte (Jan 2024 - Present)</h3>
+        <p>Hybrid role based in Gilbert, Arizona, focusing on Amazon Web Services, OKTA, and various other technologies.</p>
+        <button onclick="toggleDetails('deloitte-skills')">Skills</button>
+        <button onclick="toggleDetails('deloitte-duties')">Job Duties</button>
+        <ul id="deloitte-skills" class="details" style="display:none;">
+            <li>Amazon Web Services (AWS)</li>
+            <li>OKTA</li>
+            <li>Continuous Integration/Continuous Deployment (CI/CD)</li>
+        </ul>
+        <div id="deloitte-duties" class="details" style="display:none;">
+            <p>Detailed responsibilities including managing cloud infrastructure, ensuring security compliance, and developing automation scripts.</p>
+        </div>
+    </div>
+    <div class="job">
+        <a href="https://www.multiverse.io" target="_blank"><img src="images/multiverse.png" alt="Multiverse Logo" class="logo"></a>
+        <h3>Software Engineering Apprenticeship - Multiverse (Jan 2024 - Present)</h3>
+        <p>Virtual full-stack development bootcamp covering HTML, CSS, JavaScript, React, Node.js, AWS, and Terraform.</p>
+        <button onclick="toggleDetails('multiverse-skills')">Skills</button>
+        <button onclick="toggleDetails('multiverse-duties')">Job Duties</button>
+        <ul id="multiverse-skills" class="details" style="display:none;">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ul>
+        <div id="multiverse-duties" class="details" style="display:none;">
+            <p>Detailed duties include designing user interfaces, developing backend services, and deploying applications using AWS.</p>
+        </div>
+    </div>
+    <div class="job">
+        <a href="https://www.expeditors.com" target="_blank"><img src="images/expeditors.jpeg" alt="Expeditors Logo" class="logo"></a>
+        <h3>Transportation Planner - Expeditors (Aug 2022 - Jul 2023)</h3>
+        <p>Managed logistics and transportation planning, ensuring efficient route and load management, and timely communication across departments.</p>
+        <button onclick="toggleDetails('expeditors-skills')">Skills</button>
+        <button onclick="toggleDetails('expeditors-duties')">Job Duties</button>
+        <ul id="expeditors-skills" class="details" style="display:none;">
+            <li>Logistics Management</li>
+            <li>Strategic Planning</li>
+            <li>Data Analysis</li>
+        </ul>
+        <div id="expeditors-duties" class="details" style="display:none;">
+            <p>Responsibilities included scheduling, route optimization, and direct communication with clients to ensure delivery standards.</p>
+        </div>
+    </div>
 </div>
 
 <div id="projects" class="section">
     <h1>Projects</h1>
-    <div class="slider">
-        <div class="slide">
-            <h3>Project One</h3>
-            <p>Description of Project One. This can include key technologies used, the project goal, and any significant outcomes.</p>
-        </div>
-        <div class="slide">
-            <h3>Project Two</h3>
-            <p>Description of Project Two. Highlight any special features or challenges overcome during this project.</p>
-        </div>
-        <div class="slide">
-            <h3>Project Three</h3>
-            <p>Description of Project Three. Discuss the project scope and any collaborative efforts involved.</p>
-        </div>
-        <div class="slide">
-            <h3>Project Four</h3>
-            <p>Description of Project Four. Mention any notable innovations or improvements made through this project.</p>
-        </div>
-        <div class="slide">
-            <h3>Project Five</h3>
-            <p>Description of Project Five. Outline the impact of the project and any key learnings or success metrics.</p>
+    <div class="project" onclick="openModal('modalPersonalPortfolio')">
+        <h3>Personal Portfolio</h3>
+        <p>Brief description of the Personal Portfolio project. Click to see more details.</p>
+    </div>
+    <div class="project" onclick="openModal('modalFloppyBee')">
+        <h3>Floppy Bee Game</h3>
+        <p>Brief description of the Floppy Bee game project. Click to see more details.</p>
+    </div>
+    <div class="project" onclick="openModal('modalInventoryApp')">
+        <h3>Full Stack Inventory App</h3>
+        <p>Brief description of the Full Stack Inventory App project. Click to see more details.</p>
+    </div>
+
+    <!-- Modals for Project Details -->
+    <div id="modalPersonalPortfolio" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modalPersonalPortfolio')">&times;</span>
+            <h2>Personal Portfolio</h2>
+            <p>Detailed information about the Personal Portfolio project. Here I used HTML, CSS, JS, etc.</p>
+            <a href="https://github.com/YourUsername/PersonalPortfolio" target="_blank">View on GitHub</a>
         </div>
     </div>
-    <div class="controls">
-        <button id="prev" class="control-btn">Prev</button>
-        <button id="next" class="control-btn">Next</button>
+    <div id="modalFloppyBee" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modalFloppyBee')">&times;</span>
+            <h2>Floppy Bee Game</h2>
+            <p>Detailed information about the Floppy Bee game. Here I used game development techniques, etc.</p>
+            <a href="https://github.com/YourUsername/FloppyBee" target="_blank">View on GitHub</a>
+        </div>
+    </div>
+    <div id="modalInventoryApp" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modalInventoryApp')">&times;</span>
+            <h2>Full Stack Inventory App</h2>
+            <p>Detailed information about the Full Stack Inventory App project. Here I used full-stack technologies, etc.</p>
+            <a href="https://github.com/YourUsername/InventoryApp" target="_blank">View on GitHub</a>
+        </div>
     </div>
 </div>
 
-
 <div id="education" class="section">
-    <h1>Education</h1>
-    <!-- Education entries -->
+    <h1>Education & Certifications</h1>
+    <div class="accordion" onclick="toggleAccordion('edu-details')">
+        <h3>Bachelor’s in Cloud Engineering - University X</h3>
+        <div id="edu-details" class="details" style="display:none;">
+            <p>Graduated: 2021 - GPA: 3.8</p>
+            <p>Relevant Courses: Cloud Infrastructure, Advanced Networking</p>
+        </div>
+    </div>
+    <!-- Additional entries can be added here -->
 </div>
 
 <div id="contact" class="section">
     <h1>Contact Me</h1>
-    <p>Provide your contact information here. Include ways to reach you like email, phone, or links to your professional social media profiles.</p>
+    <div class="contact-info">
+        <p>
+            <a href="mailto:alexander.beaumier@example.com" target="_blank">
+                <i class="fas fa-envelope"></i>
+                alexander.beaumier@example.com
+            </a>
+        </p>
+        <p>
+            <a href="tel:+11234567890" target="_blank">
+                <i class="fas fa-phone"></i>
+                +1 (123) 456-7890
+            </a>
+        </p>
+        <p>
+            <a href="https://www.linkedin.com/in/alexander-beaumier-540634194/" target="_blank">
+                <i class="fab fa-linkedin"></i>
+                LinkedIn
+            </a>
+        </p>
+        <p>
+            <a href="https://github.com/Alexanderbeaumier" target="_blank">
+                <i class="fab fa-github"></i>
+                GitHub
+            </a>
+        </p>
+    </div>
 </div>
 
 <script src="script.js"></script>
