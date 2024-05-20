@@ -259,3 +259,33 @@ body, html {
         margin: 10px 0;
     }
 }
+
+@media (max-width: 500px) {
+    .section {
+        padding: 40px 20px;
+    }
+
+    .navbar a {
+        padding: 10px;
+        margin: 5px 0;
+    }
+
+    .project-card {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .section {
+        padding: 30px 10px;
+    }
+
+    .navbar a {
+        padding: 10px;
+        margin: 5px 0;
+    }
+
+    .project-card {
+        padding: 10px;
+    }
+}
