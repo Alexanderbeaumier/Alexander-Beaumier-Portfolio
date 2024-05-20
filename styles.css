@@ -4,64 +4,76 @@ body, html {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: #fff; /* Change text color to white for better readability */
-    padding-top: 70px;
+    color: #fff;
+    padding-top: 40px;
 }
 
 .section {
     padding: 80px 50px;
-    background: rgba(255, 255, 255, 0.9); /* Slightly less opaque for subtle background visibility */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* More pronounced shadow for depth */
-    margin: 30px auto; /* Increased margin for better separation of sections */
-    border-radius: 10px; /* Slightly larger radius for smoother corners */
-    max-width: 1000px; /* Adjusted for optimal line length in text */
-    border: 1px solid rgba(0, 0, 0, 0.05); /* Subtle border for defined edges */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for interactive elements */
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    margin: 30px auto;
+    border-radius: 10px;
+    max-width: 1000px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .section:hover {
-    transform: translateY(-5px); /* Slight lift effect on hover */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Increased shadow on hover for 3D effect */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .navbar {
-    background-color: #fff;
+    background-color: #333;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    height: 60px; /* Set a fixed height for the navbar */
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1200px;
 }
 
 .navbar a {
-    float: left;
-    display: block;
-    color: #333;
+    color: #fff;
     text-align: center;
-    padding: 14px 16px;
+    padding: 14px 20px;
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
 }
 
 .navbar a:hover, .navbar a:focus {
-    background-color: #0056b3;
+    background-color: #007BFF;
     color: #fff;
 }
 
 #about, #experience, #projects, #contact, #education {
     color: #333;
-    background: linear-gradient(to right, #ffffff 0%, #f7f7f7 100%);
+    background: rgba(255, 255, 255, 0.9);
 }
 
 .project, .job {
-    margin: 20px;
+    margin: 20px 0;
     padding: 20px;
     background: #ffffff;
     border-radius: 8px;
     box-shadow: 0 6px 12px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .project:hover, .job:hover {
@@ -69,41 +81,34 @@ body, html {
     box-shadow: 0 12px 24px rgba(0,0,0,0.2);
 }
 
-.highlight {
-    color: #007BFF;
-    font-weight: bold;
+.job .logo, .project .logo {
+    max-width: 50px;
+    max-height: 50px;
+    margin-right: 20px;
 }
 
-.slider {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
-
-.slide {
-    min-width: 100%;
-    transition: all 0.5s ease;
-    float: left;
-}
-
-.controls {
+.projects-container {
     display: flex;
-    justify-content: center;
-    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.control-btn {
-    cursor: pointer;
-    padding: 10px;
-    margin: 0 10px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
+.project-card {
+    flex: 1 1 calc(33% - 20px);
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-.control-btn:hover {
-    background-color: #0056b3;
+.project-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
 }
 
 .details {
@@ -113,100 +118,70 @@ body, html {
     border-left: 5px solid #0056b3;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.details ul {
-    padding-left: 20px;
-    list-style-type: none;
-}
-
-.details li {
-    margin-bottom: 5px;
-    padding-left: 20px;
-}
-
-.toggle-skills {
-    cursor: pointer;
-    color: #0056b3;
-    text-decoration: none;
-    font-size: 0.9em;
+    display: none;
 }
 
 .button {
     padding: 10px 20px;
     margin-top: 10px;
-    background-color: #007BFF;
+    background-color: #333;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     display: inline-block;
     transition: all 0.3s;
+    text-align: center;
+    margin-right: 10px;
+    text-decoration: none;
 }
 
 .button:hover {
-    background-color: #0056b3;
+    background-color: #007BFF;
+    color: #fff;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1001;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 10% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 50%;
-    border-radius: 5px;
-}
-
-.close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
+.contact-info a {
+    color: #007BFF;
     text-decoration: none;
-    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.contact-info a:hover {
+    color: #0056b3;
+}
+
+.contact-info i {
+    margin-right: 10px;
 }
 
 #dynamic-text {
-    color: #007BFF; /* Bright blue to highlight dynamic text */
+    color: #007BFF;
     font-weight: bold;
 }
 
 .section h1 {
-    color: #333; /* Neutral dark color */
-    margin-bottom: 20px; /* Space between the title and text */
+    color: #0056b3;
+    margin-bottom: 20px;
 }
 
 .section:hover h1 {
-    color: #0056b3; /* Darker blue when hovering over the section */
+    color: #0056b3;
 }
 
 .section p {
-    font-size: 18px; /* Slightly larger font for readability */
-    margin-bottom: 16px; /* Consistent spacing between paragraphs */
+    font-size: 18px;
+    margin-bottom: 16px;
 }
 
 .section, .project, .job {
     padding: 30px;
     margin: 40px auto;
-    width: calc(100% - 80px); /* Slightly larger width */
+    width: calc(100% - 80px);
     max-width: 1200px;
     background-color: rgba(255, 255, 255, 0.95);
     border-radius: 10px;
@@ -215,20 +190,9 @@ body, html {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.section h1, .project h1, .job h1 {
-    color: #0056b3; /* A theme color */
-    margin-bottom: 10px;
-}
-
-.section p, .project p, .job p {
-    font-size: 16px; /* Suitable font size */
-    color: #333; /* Dark gray for readability */
-    line-height: 1.6;
-}
-
 .section:hover, .project:hover, .job:hover {
-    transform: scale(1.02); /* Slight increase in size */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow for lifted effect */
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 #contact {
@@ -239,25 +203,6 @@ body, html {
     margin: 40px auto;
     width: calc(100% - 80px);
     max-width: 1200px;
-    text-align: center;
-}
-
-#contact .contact-info p {
-    font-size: 18px;
-    margin: 10px 0;
-}
-
-#contact .contact-info a {
-    color: #333;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-#contact .contact-info a:hover {
-    color: #0056b3;
 }
 
 .accordion h3 {
@@ -283,15 +228,24 @@ body, html {
     transition: max-height 0.2s ease-out;
 }
 
-/* Responsive Design Adjustments */
 @media (max-width: 768px) {
     .section {
-        padding: 60px 30px; /* Reduced padding on smaller screens */
-        margin: 20px auto; /* Smaller margin to utilize space efficiently */
-        max-width: 90%; /* Full use of screen width in small devices */
+        padding: 60px 30px;
+        margin: 20px auto;
+        max-width: 90%;
     }
 
     body, html {
-        padding-top: 60px; /* Smaller top padding for smaller navbar */
+        padding-top: 60px;
+    }
+
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card {
+        flex: 1 1 100%;
+        margin: 10px 0;
     }
 }

@@ -10,11 +10,13 @@
 <body>
 
 <div class="navbar">
-    <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#education">Education</a>
-    <a href="#contact">Contact</a>
+    <div class="navbar-container">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+    </div>
 </div>
 
 <div id="about" class="section">
@@ -27,89 +29,83 @@
     <h1>Experience</h1>
     <div class="job">
         <a href="https://www.deloitte.com" target="_blank"><img src="images/Deloitte.png" alt="Deloitte Logo" class="logo"></a>
-        <h3>Cloud Engineer - Deloitte (Jan 2024 - Present)</h3>
-        <p>Hybrid role based in Gilbert, Arizona, focusing on Amazon Web Services, OKTA, and various other technologies.</p>
-        <button onclick="toggleDetails('deloitte-skills')">Skills</button>
-        <button onclick="toggleDetails('deloitte-duties')">Job Duties</button>
-        <ul id="deloitte-skills" class="details" style="display:none;">
-            <li>Amazon Web Services (AWS)</li>
-            <li>OKTA</li>
-            <li>Continuous Integration/Continuous Deployment (CI/CD)</li>
-        </ul>
-        <div id="deloitte-duties" class="details" style="display:none;">
-            <p>Detailed responsibilities including managing cloud infrastructure, ensuring security compliance, and developing automation scripts.</p>
+        <div class="job-details">
+            <h3>Cloud Engineer - Deloitte (Jan 2024 - Present)</h3>
+            <p>Hybrid role based in Gilbert, Arizona, focusing on Amazon Web Services, OKTA, and various other technologies.</p>
+            <button onclick="toggleDetails('deloitte-skills')">Skills</button>
+            <button onclick="toggleDetails('deloitte-duties')">Job Duties</button>
+            <div id="deloitte-skills" class="details" style="display:none;">
+                <p>Amazon Web Services (AWS), OKTA, Continuous Integration/Continuous Deployment (CI/CD)</p>
+            </div>
+            <div id="deloitte-duties" class="details" style="display:none;">
+                <p>Detailed responsibilities including managing cloud infrastructure, ensuring security compliance, and developing automation scripts.</p>
+            </div>
         </div>
     </div>
     <div class="job">
         <a href="https://www.multiverse.io" target="_blank"><img src="images/multiverse.png" alt="Multiverse Logo" class="logo"></a>
-        <h3>Software Engineering Apprenticeship - Multiverse (Jan 2024 - Present)</h3>
-        <p>Virtual full-stack development bootcamp covering HTML, CSS, JavaScript, React, Node.js, AWS, and Terraform.</p>
-        <button onclick="toggleDetails('multiverse-skills')">Skills</button>
-        <button onclick="toggleDetails('multiverse-duties')">Job Duties</button>
-        <ul id="multiverse-skills" class="details" style="display:none;">
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-        </ul>
-        <div id="multiverse-duties" class="details" style="display:none;">
-            <p>Detailed duties include designing user interfaces, developing backend services, and deploying applications using AWS.</p>
+        <div class="job-details">
+            <h3>Software Engineering Apprenticeship - Multiverse (Jan 2024 - Present)</h3>
+            <p>Virtual full-stack development bootcamp covering HTML, CSS, JavaScript, React, Node.js, AWS, and Terraform.</p>
+            <button onclick="toggleDetails('multiverse-skills')">Skills</button>
+            <button onclick="toggleDetails('multiverse-duties')">Job Duties</button>
+            <div id="multiverse-skills" class="details" style="display:none;">
+                <p>HTML, CSS, JavaScript</p>
+            </div>
+            <div id="multiverse-duties" class="details" style="display:none;">
+                <p>Detailed duties include designing user interfaces, developing backend services, and deploying applications using AWS.</p>
+            </div>
         </div>
     </div>
     <div class="job">
         <a href="https://www.expeditors.com" target="_blank"><img src="images/expeditors.jpeg" alt="Expeditors Logo" class="logo"></a>
-        <h3>Transportation Planner - Expeditors (Aug 2022 - Jul 2023)</h3>
-        <p>Managed logistics and transportation planning, ensuring efficient route and load management, and timely communication across departments.</p>
-        <button onclick="toggleDetails('expeditors-skills')">Skills</button>
-        <button onclick="toggleDetails('expeditors-duties')">Job Duties</button>
-        <ul id="expeditors-skills" class="details" style="display:none;">
-            <li>Logistics Management</li>
-            <li>Strategic Planning</li>
-            <li>Data Analysis</li>
-        </ul>
-        <div id="expeditors-duties" class="details" style="display:none;">
-            <p>Responsibilities included scheduling, route optimization, and direct communication with clients to ensure delivery standards.</p>
+        <div class="job-details">
+            <h3>Transportation Planner - Expeditors (Aug 2022 - Jul 2023)</h3>
+            <p>Managed logistics and transportation planning, ensuring efficient route and load management, and timely communication across departments.</p>
+            <button onclick="toggleDetails('expeditors-skills')">Skills</button>
+            <button onclick="toggleDetails('expeditors-duties')">Job Duties</button>
+            <div id="expeditors-skills" class="details" style="display:none;">
+                <p>Logistics Management, Strategic Planning, Data Analysis</p>
+            </div>
+            <div id="expeditors-duties" class="details" style="display:none;">
+                <p>Responsibilities included scheduling, route optimization, and direct communication with clients to ensure delivery standards.</p>
+            </div>
         </div>
     </div>
 </div>
 
 <div id="projects" class="section">
     <h1>Projects</h1>
-    <div class="project" onclick="openModal('modalPersonalPortfolio')">
-        <h3>Personal Portfolio</h3>
-        <p>Brief description of the Personal Portfolio project. Click to see more details.</p>
-    </div>
-    <div class="project" onclick="openModal('modalFloppyBee')">
-        <h3>Floppy Bee Game</h3>
-        <p>Brief description of the Floppy Bee game project. Click to see more details.</p>
-    </div>
-    <div class="project" onclick="openModal('modalInventoryApp')">
-        <h3>Full Stack Inventory App</h3>
-        <p>Brief description of the Full Stack Inventory App project. Click to see more details.</p>
-    </div>
-
-    <!-- Modals for Project Details -->
-    <div id="modalPersonalPortfolio" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modalPersonalPortfolio')">&times;</span>
-            <h2>Personal Portfolio</h2>
-            <p>Detailed information about the Personal Portfolio project. Here I used HTML, CSS, JS, etc.</p>
-            <a href="https://github.com/YourUsername/PersonalPortfolio" target="_blank">View on GitHub</a>
+    <div class="projects-container">
+        <div class="project-card">
+            <h3>Personal Portfolio</h3>
+            <p>This project is a personal portfolio showcasing my skills and projects. Built using HTML, CSS, and JavaScript.</p>
+            <button class="button" onclick="toggleDetails('portfolio-details')">View Details</button>
+            <div id="portfolio-details" class="details" style="display:none;">
+                <p>This project is a personal portfolio showcasing my skills and projects. Built using HTML, CSS, and JavaScript.</p>
+            </div>
+            <a href="https://github.com/YourUsername/PersonalPortfolio" target="_blank" class="button">View Code</a>
+            <a href="https://yourdeployedpage.com" target="_blank" class="button">View Site</a>
         </div>
-    </div>
-    <div id="modalFloppyBee" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modalFloppyBee')">&times;</span>
-            <h2>Floppy Bee Game</h2>
-            <p>Detailed information about the Floppy Bee game. Here I used game development techniques, etc.</p>
-            <a href="https://github.com/YourUsername/FloppyBee" target="_blank">View on GitHub</a>
+        <div class="project-card">
+            <h3>Floppy Bee Game</h3>
+            <p>A fun game developed using JavaScript and HTML5 Canvas.</p>
+            <button class="button" onclick="toggleDetails('floppybee-details')">View Details</button>
+            <div id="floppybee-details" class="details" style="display:none;">
+                <p>A fun game developed using JavaScript and HTML5 Canvas.</p>
+            </div>
+            <a href="https://github.com/YourUsername/FloppyBee" target="_blank" class="button">View Code</a>
+            <a href="https://floppybeegame.com" target="_blank" class="button">View App</a>
         </div>
-    </div>
-    <div id="modalInventoryApp" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modalInventoryApp')">&times;</span>
-            <h2>Full Stack Inventory App</h2>
-            <p>Detailed information about the Full Stack Inventory App project. Here I used full-stack technologies, etc.</p>
-            <a href="https://github.com/YourUsername/InventoryApp" target="_blank">View on GitHub</a>
+        <div class="project-card">
+            <h3>Full Stack Inventory App</h3>
+            <p>A full-stack application to manage inventory, built using React, Node.js, and MongoDB.</p>
+            <button class="button" onclick="toggleDetails('inventoryapp-details')">View Details</button>
+            <div id="inventoryapp-details" class="details" style="display:none;">
+                <p>A full-stack application to manage inventory, built using React, Node.js, and MongoDB.</p>
+            </div>
+            <a href="https://github.com/YourUsername/InventoryApp" target="_blank" class="button">View Code</a>
+            <a href="https://inventoryapp.com" target="_blank" class="button">View Site</a>
         </div>
     </div>
 </div>
@@ -131,26 +127,22 @@
     <div class="contact-info">
         <p>
             <a href="mailto:alexander.beaumier@example.com" target="_blank">
-                <i class="fas fa-envelope"></i>
-                alexander.beaumier@example.com
+                <i class="fas fa-envelope"></i> alexander.beaumier@example.com
             </a>
         </p>
         <p>
             <a href="tel:+11234567890" target="_blank">
-                <i class="fas fa-phone"></i>
-                +1 (123) 456-7890
+                <i class="fas fa-phone"></i> +1 123 456 7890
             </a>
         </p>
         <p>
             <a href="https://www.linkedin.com/in/alexander-beaumier-540634194/" target="_blank">
-                <i class="fab fa-linkedin"></i>
-                LinkedIn
+                <i class="fab fa-linkedin"></i> LinkedIn
             </a>
         </p>
         <p>
             <a href="https://github.com/Alexanderbeaumier" target="_blank">
-                <i class="fab fa-github"></i>
-                GitHub
+                <i class="fab fa-github"></i> GitHub
             </a>
         </p>
     </div>
