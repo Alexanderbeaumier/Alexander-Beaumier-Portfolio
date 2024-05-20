@@ -239,6 +239,16 @@ body, html {
         padding-top: 60px;
     }
 
+    .navbar-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar a {
+        padding: 10px;
+        margin: 5px 0;
+    }
+
     .projects-container {
         flex-direction: column;
         align-items: center;
