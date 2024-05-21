@@ -25,38 +25,53 @@ body, html {
 }
 
 .navbar {
-    background-color: #333;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    position: fixed;
     width: 100%;
+    background-color: #333;
+    overflow: hidden;
+    position: fixed; /* navbar fixed at the top */
     top: 0;
-    z-index: 1000;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    left: 0;
+    z-index: 1000; /* Ensure it stays above other content */
 }
 
 .navbar-container {
     display: flex;
     justify-content: space-around;
-    width: 100%;
-    max-width: 1200px;
+    align-items: center;
+    padding: 14px 0;
 }
 
 .navbar a {
-    color: #fff;
+    color: white;
     text-align: center;
     padding: 14px 20px;
     text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s, color 0.3s;
+    font-size: 17px;
+    transition: all 0.3s ease;
     border-radius: 5px;
+    position: relative;
 }
 
-.navbar a:hover, .navbar a:focus {
-    background-color: #007BFF;
-    color: #fff;
+.navbar a::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: all 0.3s ease;
+}
+
+.navbar a:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+.navbar a:hover {
+    color: #00ff8c;
+    text-shadow: 0 0 5px #00ffbf, 0 0 10px #00d5ff;
+    box-shadow: 0 0 10px rgba(4, 255, 0, 0.6), 0 0 20px rgba(0, 123, 255, 0.6), 0 0 30px rgba(0, 123, 255, 0.6);
 }
 
 #about, #experience, #projects, #contact, #education {
