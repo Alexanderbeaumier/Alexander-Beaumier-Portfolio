@@ -69,7 +69,7 @@ body, html {
 }
 
 .navbar a:hover {
-    color: #00ff8c;
+    color: #00ffcc;
     text-shadow: 0 0 5px #00ffbf, 0 0 10px #00d5ff;
     box-shadow: 0 0 10px rgba(4, 255, 0, 0.6), 0 0 20px rgba(0, 123, 255, 0.6), 0 0 30px rgba(0, 123, 255, 0.6);
 }
