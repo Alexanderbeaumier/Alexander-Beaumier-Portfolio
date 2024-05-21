@@ -139,6 +139,8 @@ body, html {
     text-align: center;
     margin-right: 10px;
     text-decoration: none;
+    font-family: inherit; /* Ensures consistent font family */
+    font-size: inherit; /* Ensures consistent font size */
 }
 
 .button:hover, .view-details-button:hover {
