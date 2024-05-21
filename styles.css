@@ -5,8 +5,7 @@ body, html {
     background-position: center;
     background-repeat: no-repeat;
     color: #fff;
-    padding-top: 70px; /* Increased to accommodate fixed navbar */
-    margin: 0;
+    padding-top: 40px;
 }
 
 .section {
@@ -46,7 +45,7 @@ body, html {
     color: white;
     text-align: center;
     padding: 14px 20px;
-    text-decoration: none; /* Remove underline */
+    text-decoration: none;
     font-size: 17px;
     transition: all 0.3s ease;
     border-radius: 5px;
@@ -252,12 +251,11 @@ body, html {
     }
 
     body, html {
-        padding-top: 80px; /* Adjusted for fixed navbar */
+        padding-top: 60px;
     }
 
     .navbar-container {
         align-items: center;
-        flex-direction: column;
     }
 
     .navbar a {
@@ -284,12 +282,11 @@ body, html {
     }
 
     body, html {
-        padding-top: 80px; /* Adjusted for fixed navbar */
+        padding-top: 60px;
     }
 
     .navbar-container {
         align-items: center;
-        flex-direction: column;
     }
 
     .navbar a {
@@ -316,12 +313,11 @@ body, html {
     }
 
     body, html {
-        padding-top: 80px; /* Adjusted for fixed navbar */
+        padding-top: 60px;
     }
 
     .navbar-container {
         align-items: center;
-        flex-direction: column;
     }
 
     .navbar a {
